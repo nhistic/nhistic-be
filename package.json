@@ -1,0 +1,40 @@
+{
+  "name": "nhistic-be",
+  "private": true,
+  "version": "0.1.0",
+  "description": "nhistic Backend Configuration",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^2.0.4",
+    "@ckeditor/strapi-plugin-ckeditor": "^0.0.7",
+    "@palmabit/strapi-app-version": "^1.1.0",
+    "@relate-app/strapi-plugin-gatsby": "^1.0.6",
+    "@strapi/plugin-gatsby-preview": "^0.1.0",
+    "@strapi/plugin-graphql": "^4.10.2",
+    "@strapi/plugin-i18n": "^4.10.2",
+    "@strapi/plugin-seo": "^1.8.0",
+    "@strapi/plugin-users-permissions": "^4.10.2",
+    "@strapi/provider-upload-cloudinary": "^4.10.2",
+    "@strapi/strapi": "^4.10.2",
+    "install": "^0.13.0",
+    "npm": "^9.6.6",
+    "pg": "^8.10.0",
+    "strapi-plugin-rest-cache": "^4.2.7"
+  },
+  "author": {
+    "name": "@wadidin"
+  },
+  "strapi": {
+    "uuid": "7e6111b2-0840-43f6-abbb-2c6a6ec9911c"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

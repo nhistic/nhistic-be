@@ -1,0 +1,126 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog.blog",
+      "mappedBy": "author"
+    },
+    "fullName": {
+      "type": "string",
+      "required": true
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "website": {
+      "type": "string",
+      "default": "https://site.com/"
+    },
+    "facebook": {
+      "type": "string",
+      "default": "https://facebook.com/"
+    },
+    "twitter": {
+      "type": "string",
+      "default": "https://twitter.com/"
+    },
+    "instagram": {
+      "type": "string",
+      "default": "https://instagram.com/"
+    },
+    "tiktok": {
+      "type": "string",
+      "default": "https://tiktok.com/"
+    },
+    "youtube": {
+      "type": "string",
+      "default": "https://youtube.com/"
+    },
+    "podcasts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::podcast.podcast",
+      "mappedBy": "speaker"
+    },
+    "photographs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::photograph.photograph",
+      "mappedBy": "photographer"
+    },
+    "about": {
+      "type": "text"
+    }
+  }
+}

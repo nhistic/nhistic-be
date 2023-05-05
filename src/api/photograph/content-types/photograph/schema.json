@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photographs",
+  "info": {
+    "singularName": "photograph",
+    "pluralName": "photographs",
+    "displayName": "Photograph",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "description": {
+      "type": "text"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "photographs"
+    },
+    "tag": {
+      "type": "component",
+      "repeatable": true,
+      "component": "post-tag.tag"
+    },
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
+    },
+    "view": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "photographer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "photographs"
+    },
+    "shutterstock": {
+      "type": "string",
+      "default": "https://shutterstock.com/"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
